@@ -5,7 +5,7 @@ import logo from '../../../images/logofinal.PNG'
 
 const Footer = () => {
     return (
-        <div style={{ backgroundColor: "MediumPurple",height:'400px'}}>
+        <div style={{ backgroundColor: "MediumPurple",height:'420px'}}>
         <div className='row row-cols-1 row-cols-md-2 g-1'>
             <div className="col">
                 <div className="m-5">
@@ -33,7 +33,7 @@ const Footer = () => {
          
 
         </div>
-        <span className="text-white">© 2021 All Rights Reserved by Angel Baby Products</span>
+        <span className="text-white me-1 mt-5">© 2021 All Rights Reserved by Angel Baby Products</span>
     </div>
     );
 };

@@ -6,6 +6,10 @@ import Explore from './Pages/Explore/Explore';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
 import Notfound from './Pages/Notfound/Notfound';
+import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Login/Register/Register';
+import Aboutus from './Pages/AboutUs/AboutUs';
+import DashBoard from './Pages/DashBoard/DashBoard';
 
 function App() {
   return (
@@ -24,6 +28,22 @@ function App() {
           <Route path='/explore'>
             <Explore></Explore>
           </Route>
+          <Route path='/login'>
+            <Login></Login>
+
+          </Route>
+          <Route path='/register'>
+            <Register></Register>
+          </Route>
+          <Route path='/dashboard'>
+            <DashBoard></DashBoard>
+          </Route>
+          
+          <Route path='/aboutus'>
+            <Aboutus></Aboutus>
+          </Route>
+
+          
           <Route path="*">
             <Notfound></Notfound>
 
