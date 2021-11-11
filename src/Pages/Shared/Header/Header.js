@@ -1,11 +1,13 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 
 import logo from '../../../images/logofinal.PNG'
 import './Header.css'
 
 const Header = () => {
+    const {user,logout}=useAuth()
 
     return (
         <div className='d-flex justify-content-between'>
@@ -27,13 +29,15 @@ const Header = () => {
                             >
                                 <Nav.Link ><Link to='/home'>Home</Link></Nav.Link>
                                <Nav.Link ><Link to='/explore'>Explore</Link></Nav.Link>
-                               <Nav.Link ><Link to='/dashboard'>Dashboard</Link></Nav.Link>
+                               {
+                                   user?.email && <Nav.Link ><Link to='/dashboard'>Dashboard</Link></Nav.Link>
+                               }
                                <Nav.Link ><Link to='/aboutus'>About Us</Link></Nav.Link>
                                
 
 
-                                {/* {user.email ? <div><span>{user.displayName}  </span><Button onClick={logout} className='me-3' variant="primary">Logout</Button></div> :
-                                    <Link to='/login'><Button className='me-3' variant="success">Login</Button></Link>} */}
+                                {user.email ? <div><span>{user.displayName}  </span><Button onClick={logout} style={{backgroundColor:"hotpink"}}className='me-3 text-white fw-bold'>Logout</Button></div> :
+                                    <Link to='/login'><Button className='me-3' style={{backgroundColor:'purple'}}>Login</Button></Link>}
 
                             </Nav>
 
