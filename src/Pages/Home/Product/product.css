@@ -1,0 +1,10 @@
+.product{
+    background-color:rgb(224, 212, 235);
+    border: 1px solid purple ;
+    border-radius: 20px;
+}
+.product img{
+    height: 250px;
+    padding:4px;
+    border-radius:15px;
+}

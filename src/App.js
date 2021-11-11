@@ -12,6 +12,7 @@ import Aboutus from './Pages/AboutUs/AboutUs';
 import DashBoard from './Pages/DashBoard/DashBoard';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import ProductDetail from './Pages/Home/ProductDetail/ProductDetail';
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
           <Route path='/aboutus'>
             <Aboutus></Aboutus>
           </Route>
+          <PrivateRoute path="/products/:productId">
+              <ProductDetail></ProductDetail>
+            </PrivateRoute>
 
           
           <Route path="*">

@@ -36,7 +36,7 @@ const Header = () => {
                                
 
 
-                                {user.email ? <div><span>{user.displayName}  </span><Button onClick={logout} style={{backgroundColor:"hotpink"}}className='me-3 text-white fw-bold'>Logout</Button></div> :
+                                {user.email ? <div><span>{user.displayName}  </span><Button onClick={logout} style={{backgroundColor:"salmon"}}className='me-3 text-white fw-bold'>Logout</Button></div> :
                                     <Link to='/login'><Button className='me-3' style={{backgroundColor:'purple'}}>Login</Button></Link>}
 
                             </Nav>
