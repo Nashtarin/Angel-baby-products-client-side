@@ -6,7 +6,7 @@ import useAuth from '../../../Hooks/useAuth';
 import logo from '../../../images/logofinal.PNG'
 
 
-const Register = () => {
+const Login = () => {
     const[logindata,setLoginData]=useState({})
     const {user, isLoading,authError,  loginUser}=useAuth()
     const location = useLocation();
@@ -49,7 +49,7 @@ const Register = () => {
             
       
          
-             <Button sx={{ width: '75%', m: 1 }} style={{backgroundColor:"hotpink",color:'purple'}} type="submit" variant="contained">Register</Button>
+             <Button sx={{ width: '75%', m: 1 }} style={{backgroundColor:"hotpink",color:'purple'}} type="submit" variant="contained">Login</Button>
                         <NavLink
                             style={{ textDecoration: 'none' }}
                             to="/register">
@@ -58,7 +58,7 @@ const Register = () => {
 
            </form>
            {isLoading && <CircularProgress />}
-                        {user?.email && <Alert severity="success">Login successfully!</Alert>}
+                        {user?.email && <Alert severity="success">Logged in successfully!</Alert>}
                         {authError && <Alert severity="error">{authError}</Alert>}
                         {console.log(user)}
 
@@ -73,4 +73,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default Login;
