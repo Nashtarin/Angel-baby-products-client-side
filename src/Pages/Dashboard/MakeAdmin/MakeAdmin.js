@@ -9,7 +9,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://secure-garden-78114.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 // 'authorization': `Bearer ${token}`,
@@ -29,18 +29,18 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-        <h2>Make an Admin</h2>
-        <form onSubmit={handleAdminSubmit}>
-            <TextField
-                sx={{ width: '50%' }}
-                label="Email"
-                type="email"
-                onBlur={handleOnBlur}
-                variant="standard" />
-            <Button type="submit" variant="contained">Make Admin</Button>
-        </form>
-        {success && <Alert severity="success">Made Admin successfully!</Alert>}
-    </div>
+            <h2 style={{ color: 'purple' }}>Make an Admin</h2>
+            <form onSubmit={handleAdminSubmit}>
+                <TextField
+                    sx={{ width: '50%' }}
+                    label="Email"
+                    type="email"
+                    onBlur={handleOnBlur}
+                    variant="standard" />
+                <Button type="submit" variant="contained">Make Admin</Button>
+            </form>
+            {success && <Alert severity="success">Made Admin successfully!</Alert>}
+        </div>
     );
 };
 

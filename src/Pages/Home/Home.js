@@ -8,36 +8,36 @@ import SingleReview from './ReviewPart/SingleReview';
 
 const Home = () => {
     const [products, setProducts] = useState([])
-    const [reviews,setReviews]=useState([])
+    const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://secure-garden-78114.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://secure-garden-78114.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
     return (
         <div>
             <Banner></Banner>
-            <h2 style={{color:'hotpink'}} className="my-3">Our Products</h2>
+            <h2 style={{ color: 'hotpink' }} className="my-3">Our Products</h2>
             <div className="row row-cols-1 row-cols-md-3 g-4 mx-5 my-3">
-                
 
-                {products.length===0?<Spinner style={{marginLeft:"500px"}}animation="border" variant="primary" />:products.slice(1,7).map(pd => <Product key={pd._id}
+
+                {products.length === 0 ? <Spinner style={{ marginLeft: "500px" }} animation="border" variant="primary" /> : products.slice(1, 7).map(pd => <Product key={pd._id}
                     products={pd}></Product>)}
 
 
             </div>
-            <h2 style={{color:'hotpink'}} className="my-3">Our Customer Reviews</h2>
+            <h2 style={{ color: 'hotpink' }} className="my-3">Our Customer Reviews</h2>
             <div className="row row-cols-1 row-cols-md-3 g-4 mx-5 my-3">
-            {
-                      reviews.map(rw=><SingleReview
-                      key={rw._id}
-                      reviews={rw}></SingleReview>)
-                  }
+                {
+                    reviews.map(rw => <SingleReview
+                        key={rw._id}
+                        reviews={rw}></SingleReview>)
+                }
 
             </div>
             <div className="my-3">
