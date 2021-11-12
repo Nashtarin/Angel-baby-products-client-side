@@ -29,12 +29,13 @@ import Review from './Review/Review';
 import ManageAllOrders from './ManageAllOrders/ManageAllOrders';
 import AddAProduct from './AddAProduct/AddAProduct';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
+import AdminRoute from '../Login/AdminRoute/AdminRoute';
 
 
 const drawerWidth = 200;
 
 function ResponsiveDrawer(props) {
-  const {user,logout}=useAuth()
+  const {user,logout,admin}=useAuth()
   let { path, url } = useRouteMatch();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -51,9 +52,11 @@ function ResponsiveDrawer(props) {
       <Link to={`${url}`}><Button style={{display:'block', marginLeft:"35px"}} color="inherit">My Orders</Button></Link>
       <Link to={`${url}/pay`}><Button style={{display:'block', marginLeft:"35px"}}color="inherit">Pay</Button></Link>
       <Link to={`${url}/review`}><Button style={{display:'block', marginLeft:"35px"}} color="inherit">Review</Button></Link>
-      <Link to={`${url}/mangeallusers`}><Button color="inherit">Manage All Users</Button></Link>
-      <Link to={`${url}/addaproduct`}><Button color="inherit">Add Product</Button></Link>
-      <Link to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link>
+       {
+         admin && <Box>     <Link to={`${url}/mangeallusers`}><Button color="inherit">Manage All Users</Button></Link>
+         <Link to={`${url}/addaproduct`}><Button color="inherit">Add Product</Button></Link>
+         <Link to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link></Box>
+       }
        </List>     
      
     </div>
@@ -136,15 +139,15 @@ function ResponsiveDrawer(props) {
                    <Route path={`${path}/review`}>
                      <Review></Review>
                    </Route>
-                   <Route path={`${path}/mangeallusers`}>
+                   <AdminRoute path={`${path}/mangeallusers`}>
                      <ManageAllOrders></ManageAllOrders>
-                   </Route>
-                   <Route path={`${path}/addaproduct`}>
+                   </AdminRoute>
+                   <AdminRoute path={`${path}/addaproduct`}>
                     <AddAProduct></AddAProduct>
-                   </Route>
-                   <Route path={`${path}/makeadmin`}>
+                   </AdminRoute>
+                   <AdminRoute path={`${path}/makeadmin`}>
                     <MakeAdmin></MakeAdmin>
-                   </Route>
+                   </AdminRoute>
 
                     {/* <AdminRoute path={`${path}/addDoctor`}>
                         <AddDoctor></AddDoctor>

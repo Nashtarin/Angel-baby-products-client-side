@@ -59,7 +59,7 @@ const MyOrders = () => {
     return (
         <div>
         <h1 className="text-primary">My Orders</h1>
-          <div className="row row-cols-1 row-cols-md-3 g-4 mx-5 my-3">
+          <div className="row row-cols-1 row-cols-md-3 g-4 mx-5 my-1">
           
          {console.log(users)}
           { users?.map(user => <SingleUser
