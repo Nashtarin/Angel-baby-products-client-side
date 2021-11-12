@@ -30,6 +30,7 @@ import ManageAllOrders from './ManageAllOrders/ManageAllOrders';
 import AddAProduct from './AddAProduct/AddAProduct';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 import AdminRoute from '../Login/AdminRoute/AdminRoute';
+import ManageProducts from './ManageProducts/ManageProducts';
 
 
 const drawerWidth = 200;
@@ -55,6 +56,7 @@ function ResponsiveDrawer(props) {
        {
          admin && <Box>     <Link to={`${url}/mangeallusers`}><Button color="inherit">Manage All Users</Button></Link>
          <Link to={`${url}/addaproduct`}><Button color="inherit">Add Product</Button></Link>
+         <Link to={`${url}/manageproducts`}><Button color="inherit">Manage Products</Button></Link>
          <Link to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link></Box>
        }
        </List>     
@@ -139,11 +141,15 @@ function ResponsiveDrawer(props) {
                    <Route path={`${path}/review`}>
                      <Review></Review>
                    </Route>
+                  
                    <AdminRoute path={`${path}/mangeallusers`}>
                      <ManageAllOrders></ManageAllOrders>
                    </AdminRoute>
                    <AdminRoute path={`${path}/addaproduct`}>
                     <AddAProduct></AddAProduct>
+                   </AdminRoute>
+                   <AdminRoute path={`${path}/manageproducts`}>
+                    <ManageProducts></ManageProducts>
                    </AdminRoute>
                    <AdminRoute path={`${path}/makeadmin`}>
                     <MakeAdmin></MakeAdmin>

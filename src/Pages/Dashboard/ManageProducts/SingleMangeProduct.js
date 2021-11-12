@@ -1,14 +1,10 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './product.css'
 
-
-const Product = (props) => {
+const SingleMangeProduct = (props) => {
     const {name, img, description,_id,price } = props.products;
-    
-    
-    
+    const {handleDelete}=props
     return (
         <div className="col">
            
@@ -19,9 +15,7 @@ const Product = (props) => {
                 <h3 style={{color:'hotpink'}} className="card-title fw-bold">{name}</h3>
                 <p className="card-text">{description}</p>
                 <h4  style={{color:'hotpink'}}className="fw-bold">Price:BDT {price}</h4>
-                <Link to={`/products/${_id}`}>
-                    <Button style={{backgroundColor:"hotpink",border:"2px solid purple"}} className="text-white fw-bold ">Purchase</Button>
-                </Link>
+                <Button onClick={()=>handleDelete(_id)} style={{backgroundColor:"purple",color:'white'}}>Delete</Button>
             </div>
         </div>
 
@@ -29,4 +23,4 @@ const Product = (props) => {
     );
 };
 
-export default Product;
+export default SingleMangeProduct;

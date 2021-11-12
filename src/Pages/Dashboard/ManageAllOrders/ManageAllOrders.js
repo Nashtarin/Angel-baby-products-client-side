@@ -50,8 +50,8 @@ const ManageAllOrders = () => {
     }
     return (
         <div>
-          <h1 className="text-primary">All Users</h1>
-            <div className="row row-cols-1 row-cols-md-3 g-4 mx-5 my-1">
+          <h1 className="text-primary">All Orders</h1>
+            <div className="row row-cols-1 row-cols-md-3 g-4 mx-5">
             
            {console.log(users)}
             { users?.map(user => <SingleUser
