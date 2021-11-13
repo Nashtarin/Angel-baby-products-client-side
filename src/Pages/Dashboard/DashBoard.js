@@ -36,7 +36,7 @@ import ManageProducts from './ManageProducts/ManageProducts';
 const drawerWidth = 200;
 
 function ResponsiveDrawer(props) {
-  const {user,logout,admin}=useAuth()
+  const {user,logout,admin,}=useAuth()
   let { path, url } = useRouteMatch();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
