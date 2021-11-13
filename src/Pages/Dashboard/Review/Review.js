@@ -29,7 +29,7 @@ const Review = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <input defaultValue={user.displayName}{...register("name")} placeholder="Enter The Your Name" />
-                +
+                
 
                 <textarea  {...register("reviews")} placeholder="Please Write Your opinions about us" />
                 <input  {...register("rating")} placeholder="Enter The rating in Number" />
