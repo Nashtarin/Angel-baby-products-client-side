@@ -52,10 +52,10 @@ function ResponsiveDrawer(props) {
       <Link to="/Home"><Button style={{display:'block', marginLeft:"35px"}}color="inherit">Home</Button></Link>
       <Link to={`${url}`}><Button style={{display:'block', marginLeft:"35px"}} color="inherit">My Orders</Button></Link>
       <Link to={`${url}/pay`}><Button style={{display:'block', marginLeft:"35px"}}color="inherit">Pay</Button></Link>
-      {/* <Link to={`${url}/review`}><Button style={{display:'block', marginLeft:"35px"}} color="inherit">Review</Button></Link> */}
+      <Link to={`${url}/review`}><Button style={{display:'block', marginLeft:"35px"}} color="inherit">Review</Button></Link>
        {
          admin && <Box>
-           <Link to={`${url}/review`}><Button style={{display:'block', marginLeft:"35px"}} color="inherit">Review</Button></Link>     
+         
            <Link to={`${url}/mangeallusers`}><Button color="inherit">Manage All Users</Button></Link>
          <Link to={`${url}/addaproduct`}><Button color="inherit">Add Product</Button></Link>
          <Link to={`${url}/manageproducts`}><Button color="inherit">Manage Products</Button></Link>
@@ -140,9 +140,9 @@ function ResponsiveDrawer(props) {
                    <Route path={`${path}/pay`}>
                      <Pay></Pay>
                    </Route>
-                   <AdminRoute path={`${path}/review`}>
+                   <Route path={`${path}/review`}>
                      <Review></Review>
-                   </AdminRoute>
+                   </Route>
                   
                    <AdminRoute path={`${path}/mangeallusers`}>
                      <ManageAllOrders></ManageAllOrders>
