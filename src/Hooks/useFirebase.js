@@ -9,6 +9,29 @@ const useFirebase = () => {
     const [authError, setAuthError] = useState('');
     const [admin, setAdmin] = useState(false);
     const auth = getAuth();
+    const googleprovider = new GoogleAuthProvider();
+    const googleSignin=(location,history)=>{  
+        setIsLoading(true);
+        signInWithPopup(auth, googleprovider)
+      .then((result) => {
+     
+        // The signed-in user info.
+        const user = result.user;
+        setUser(user);
+        //history.replace('/');
+        const destination = location?.state?.from || '/';
+        history.replace(destination);
+        setAuthError('');
+      
+      }).catch((error) => {
+      
+       setAuthError(error.message)
+      })
+
+     .finally(() => setIsLoading(false))}
+     
+    
+    
     const registerUser = (email, password, name, history) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
@@ -86,13 +109,14 @@ const useFirebase = () => {
     return {
         user,
         admin,
-        //token,
+       
         isLoading,
         authError,
         registerUser,
         loginUser,
-        //signInWithGoogle,
+       
         logout,
+        googleSignin
 
     }
 

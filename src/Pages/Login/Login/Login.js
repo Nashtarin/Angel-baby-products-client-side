@@ -8,7 +8,7 @@ import logo from '../../../images/logofinal.PNG'
 
 const Login = () => {
     const[logindata,setLoginData]=useState({})
-    const {user, isLoading,authError,  loginUser}=useAuth()
+    const {user, isLoading,authError, googleSignin, loginUser}=useAuth()
     const location = useLocation();
     const history = useHistory();
     const handleOnBlur=e=>{
@@ -57,6 +57,8 @@ const Login = () => {
                         </NavLink>
 
            </form>
+           <h4 style={{color:'purple'}}>Or</h4>
+           <Button sx={{ width: '75%', m: 1 }} style={{backgroundColor:"hotpink",color:'purple'}} onClick={()=>googleSignin(location, history)} variant="contained">Google Sign In</Button>
            {isLoading && <CircularProgress />}
                         {user?.email && <Alert severity="success">Logged in successfully!</Alert>}
                         {authError && <Alert severity="error">{authError}</Alert>}

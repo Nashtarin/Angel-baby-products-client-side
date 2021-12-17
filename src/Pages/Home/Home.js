@@ -34,7 +34,7 @@ const Home = () => {
             <h2 style={{ color: 'hotpink' }} className="my-3">Our Customer Reviews</h2>
             <div className="row row-cols-1 row-cols-md-3 g-4 mx-5 my-3">
                 {
-                    reviews.map(rw => <SingleReview
+                    reviews.slice(0,3).map(rw => <SingleReview
                         key={rw._id}
                         reviews={rw}></SingleReview>)
                 }
