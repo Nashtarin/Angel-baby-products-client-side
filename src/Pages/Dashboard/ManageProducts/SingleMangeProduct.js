@@ -14,7 +14,7 @@ const SingleMangeProduct = (props) => {
                
                 <h3 style={{color:'hotpink'}} className="card-title fw-bold">{name}</h3>
                 <p className="card-text">{description}</p>
-                <h4  style={{color:'hotpink'}}className="fw-bold">Price:BDT {price}</h4>
+                <h4  style={{color:'hotpink'}}className="fw-bold">Price:${price}</h4>
                 <Button onClick={()=>handleDelete(_id)} style={{backgroundColor:"purple",color:'white'}}>Delete</Button>
             </div>
         </div>

@@ -3,6 +3,8 @@ import { useParams } from 'react-router';
 import { appendErrors, useForm } from 'react-hook-form';
 import useAuth from '../../../Hooks/useAuth';
 import './productdetail.css'
+import Payment from '../../Payment/Payment';
+import { Link } from 'react-router-dom';
 
 const ProductDetail = () => {
     const { productId } = useParams();
@@ -13,7 +15,7 @@ const ProductDetail = () => {
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
-    const { img, name, imported, price, description, delivery, quantity } = product;
+    const { img, name, imported, price, description, delivery, quantity,_id } = product;
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
     const { user } = useAuth()
     const onSubmit = data => {
@@ -47,7 +49,7 @@ const ProductDetail = () => {
                         <h6 className="mb-3">Imported From: {imported} </h6>
                         <h6 className="mb-3">Delivery Duration: {delivery} </h6>
                         <h6 className="mb-3">Quantity:{quantity} </h6>
-                        <h3 className="mb-3">Price: BDT {price}  </h3>
+                        <h3 className="mb-3">Price:${price}</h3>
                     </div>
                     <h3 style={{ color: 'purple' }}>We guarantee, you will always feel comfort with our any kind of services </h3>
                 </div>
@@ -75,8 +77,13 @@ const ProductDetail = () => {
                     {errors.price && <span className="text-danger">Price is required</span>}
                     {errors.phone && <span className="text-danger">Your phone number is required</span>}
 
-                    <input style={{ backgroundColor: 'purple' }} className="btn text-white fw-bold" type="submit" value="Buy" />
+                    <input style={{ backgroundColor: 'purple' }} className="btn text-white fw-bold" type="submit" value="Order" />
+                    
                 </form>
+               <Link to={`/payment/${_id}`}><button >
+                    Pay
+                </button></Link> 
+              
 
             </div>
         </div>
