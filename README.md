@@ -8,7 +8,7 @@
 Please visit my site [Angel](https://baby-products-3fff4.web.app/).
 
 "Angel" is a baby products service which offers different products for babies.I made this site with react,react-router,mui, react-hook-form,bootstrap,mongodb as backend etc. I used firebase for hosting live site and Heroku for live server. 
-* nur@gmail.com and password:nur12345 is the admin, please log with it to see admin features
+<!-- * nur@gmail.com and password:nur12345 is the admin, please log with it to see admin features -->
 * The website consists of main three routes at first, Home, About Us, Explore
 * A user can login using email/password but he/she has to register, when a user at first click to the login button at the top right of the site, it will redirect it to login page, when the user logged in then a dashboard button will come at the header. 
 * When user is not admin he/she will see three routes My order,Review and pay in dashboard page and also a logout button can be shown at the top.
