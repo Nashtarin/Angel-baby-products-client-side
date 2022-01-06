@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = [
-  { id: '1', title: 'First Post!', content: 'Hello!' },
-  { id: '2', title: 'Second Post', content: 'More text' },
+  { pid: '1', ptitle: 'First Post!', pcontent: 'Hello!' },
+  { pid: '2', ptitle: 'Second Post', pcontent: 'More text' },
 ]
 
 const postsSlice = createSlice({
@@ -15,7 +15,7 @@ const postsSlice = createSlice({
   },
 })
 
-export const {addedPost} = postsSlice.actions
+export const {postadded} = postsSlice.actions
 
 export default postsSlice.reducer
  
