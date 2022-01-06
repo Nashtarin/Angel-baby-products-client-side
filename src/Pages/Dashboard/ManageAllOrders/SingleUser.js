@@ -8,7 +8,7 @@ const SingleUser = (props) => {
     const { handleDelete, handleUpdate } = props
     return (
         <div className="col">
-            <div style={{ backgroundColor: 'lightcyan', border: "1px solid deepskyblue" }} className="card offer h-100">
+            <div style={{ backgroundColor: 'lightskyblue', border: "1px solid deepskyblue" }} className="card offer h-100">
                 {/* <img src={img} className="card-img-top" alt="..." /> */}
                 <div className="card-body">
                     <h4 className="card-title fw-bold text-primary">{name}</h4>
