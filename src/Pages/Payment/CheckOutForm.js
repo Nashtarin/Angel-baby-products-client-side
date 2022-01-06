@@ -3,19 +3,19 @@ import React from 'react';
 
 const CheckOutForm = ({ price }) => {
     
-    const stripe = useStripe()
-    const elements = useElements();
+    const pstripe = useStripe()
+    const pelements = useElements();
    
     const handleSubmit = async (e) => {
         
 
-        if (!stripe || !elements) {
+        if (!pstripe || !pelements) {
 
             return;
         }
 
 
-        const card = elements.getElement(CardElement);
+        const card = pelements.getElement(CardElement);
 
         if (card == null) {
             return;
@@ -43,7 +43,7 @@ const CheckOutForm = ({ price }) => {
                         style: {
                             base: {
                                 fontSize: '16px',
-                                color: 'black',
+                                color: 'red',
                                 '::placeholder': {
                                     color: 'purple',
                                 },
@@ -54,7 +54,7 @@ const CheckOutForm = ({ price }) => {
                         },
                     }}
                 />
-                <button style={{backgroundColor:"purple",color:"white"}}type="submit" disabled={!stripe}>
+                <button style={{backgroundColor:"purple",color:"white"}}type="submit" disabled={!pstripe}>
                     Pay ${price}
                 </button>
             </form>
